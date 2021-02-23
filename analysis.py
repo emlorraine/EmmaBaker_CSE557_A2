@@ -2,17 +2,15 @@ import pandas as pd
 from scipy import stats
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-import seaborn as sns
 import matplotlib as mpl
 mpl.use('MacOSX')
-import numpy as np
 import matplotlib.pyplot as plt
 
 data = pd.read_csv('data/articles.csv')
-# plt.scatter(data['Article'], data['duration'])
-# plt.xlabel("Article")
-# plt.ylabel("Duration")
-# plt.show()
+plt.scatter(data['Article'], data['duration'])
+plt.xlabel("Article")
+plt.ylabel("Duration")
+plt.show()
 
 kmeans = KMeans(n_clusters=47, random_state=1).fit(data)
 predicted_data=data.copy()
